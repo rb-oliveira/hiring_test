@@ -395,8 +395,7 @@ const  MemoryEasy = () => {
 
         saveData();
     }
-}, [matchedCards, cards.length, navigate, sfxVolume, failedAttempts, timer]);
-
+  }, [matchedCards, cards.length, navigate, sfxVolume, failedAttempts, timer]);
 
   const userID = localStorage.getItem("userID"); // ✅ Fetch from local storage or auth context
   if (!userID) {

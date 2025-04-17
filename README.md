@@ -1,6 +1,17 @@
 
 ## Card Memory Game - Simplified Skill Test
 
+Riubbe Oliveira's hiring test
+Start Time: Thursday, 17 April 2025 at 18:20 UTC-3
+End Time:   Thursday, 17 April 2025 at 20:30 UTC-3
+
+Test completed
+🔧 Deliverables:
+- Refactored the difficulty selection modal
+- Implemented game history feature (modal + backend integration)
+- Full integration with API using Axios for both saving and retrieving data
+- Consistent styling aligned with the application's visual standards
+
 ### Welcome!
 Thank you for your interest in joining! This is a simplified skill test designed to understand your approach to problem-solving and development. The tasks are categorized based on your area of expertise.
 
