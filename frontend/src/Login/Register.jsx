@@ -4,7 +4,7 @@ import styles from './Register.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const [formData, setFormData] = useState({ username: '', password: '' });
+  const [formData, setFormData] = useState({ username: '', password: '', email: '' });
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
@@ -31,6 +31,13 @@ const Register = () => {
           placeholder="Username"
           value={formData.username}
           onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+          className={styles.input}
+        />
+        <input
+          type="text"
+          placeholder="Email"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           className={styles.input}
         />
         <input
