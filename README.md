@@ -1,6 +1,10 @@
 
 ## Card Memory Game - Simplified Skill Test
 
+Riubbe Oliveira's hiring test
+Start Time: Thursday, 17 April 2025 at 18:20 UTC-3
+            Friday,   18 April 2025 at 01:20 UTC+4
+
 ### Welcome!
 Thank you for your interest in joining! This is a simplified skill test designed to understand your approach to problem-solving and development. The tasks are categorized based on your area of expertise.
 
