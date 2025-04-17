@@ -10,6 +10,7 @@ import { X } from "lucide-react";
 import "./Play.css";
 
 import SelectDifficultyModal from "./SelectDifficultyModal";
+import GameHistoryModal from "./GameHistoryModal";
 
 const modalStyles = {
   overlay: {
@@ -44,7 +45,9 @@ const Play = () => {
   const [PlaymodalIsOpen, setModalPlayIsOpen] = useState(false);
   const [difficulty, setDifficulty] = useState(null);
   const [isCalmMode, setIsCalmMode] = useState(false);
+  const [isHistoryModalIsOpen, setIsHistoryModalIsOpen] = useState(false);
   
+
   const [bgVolume, setBgVolume] = useState(
     localStorage.getItem("bgVolume") !== null ? parseInt(localStorage.getItem("bgVolume"), 10) : 50
   );
@@ -135,6 +138,16 @@ const Play = () => {
     playClickSound();
   };
 
+  const openHistoryModal = () => {
+    setIsHistoryModalIsOpen(true);
+    playClickSound();
+  };
+
+  const closeHistoryModal = () => {
+    setIsHistoryModalIsOpen(false);
+    playClickSound();
+  };
+
   const PlayopenModal = () => {
     playClickSound();
     setModalPlayIsOpen(true);
@@ -148,6 +161,12 @@ const Play = () => {
   const handleDifficultySelect = (level) => {
     setDifficulty(level);
   };
+
+  const userID = localStorage.getItem("userID"); 
+  if (!userID) {
+    console.error("Error: userID is missing.");
+    return;
+  }
 
   const handlePlay = () => {
     playClickSound();
@@ -200,6 +219,7 @@ const Play = () => {
         >
           Play
         </button>
+
         <button
           className={`game-button ${isCalmMode ? "calm-button" : ""}`}
           onClick={() => {
@@ -210,6 +230,7 @@ const Play = () => {
         >
           Instructions
         </button>
+
         <button
           className={`game-button ${isCalmMode ? "calm-button" : ""}`}
           onClick={SettingopenModal}
@@ -217,7 +238,16 @@ const Play = () => {
         >
           Settings
         </button>
+
+        <button
+          className={`game-button ${isCalmMode ? "calm-button" : ""}`}
+          onClick={openHistoryModal}
+          onMouseEnter={playHoverSound}
+        >
+          History
+        </button>
       </div>
+
       <Modal
         isOpen={SettingsmodalIsOpen}
         onRequestClose={SettingcloseModal}
@@ -299,6 +329,14 @@ const Play = () => {
         playHoverSound={playHoverSound}
         isCalmMode={isCalmMode}
         difficulty={difficulty}
+      />
+
+      <GameHistoryModal
+        isOpen={isHistoryModalIsOpen}
+        onClose={closeHistoryModal}
+        userId={userID}
+        modalStyles={modalStyles}
+        isCalmMode={isCalmMode}
       />
       
     </div>

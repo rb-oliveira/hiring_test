@@ -1,0 +1,68 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #1e1e2e;
+  border: 2px solid #4a4e69;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  position: relative;
+  color: #fff;
+}
+
+.modal-title {
+  color: #ffcc00;
+  margin-bottom: 1rem;
+}
+
+.history-list {
+  margin-top: 1rem;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.history-table th, .history-table td {
+  border: 1px solid #4a4e69;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.close-button {
+  margin-top: 20px;
+  background-color: #444;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #6366f1;
+}
+
+.empty {
+  color: #ccc;
+  margin-top: 2rem;
+}
