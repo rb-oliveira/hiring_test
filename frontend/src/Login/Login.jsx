@@ -47,7 +47,7 @@ const Login = ({ onLogin }) => {
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           className={styles.input}
         />
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '10px' }}>
           <button type="submit" className={`${styles.button} ${styles.loginButton}`}>
             Login
           </button>

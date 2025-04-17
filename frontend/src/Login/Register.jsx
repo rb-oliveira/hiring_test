@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './Register.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [formData, setFormData] = useState({ username: '', password: '' });
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,6 +16,10 @@ const Register = () => {
     } catch (error) {
       setMessage(error.response?.data.message || 'Error registering');
     }
+  };
+
+  const handleLoginRedirect = () => {
+    navigate('/login');
   };
 
   return (
@@ -38,6 +44,10 @@ const Register = () => {
           Register
         </button>
         {message && <p className={styles.message}>{message}</p>}
+
+        <div className={styles.link} onClick={handleLoginRedirect}>
+          Already have an account? Login
+        </div>
       </form>
     </div>
   );
